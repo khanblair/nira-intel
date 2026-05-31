@@ -659,7 +659,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── RIGHT HUD (desktop): Search + District Intel + NIRA Alerts ── */}
-      <div className="desktop-panel absolute right-5 top-20 bottom-24 w-80 flex flex-col gap-3 z-[200] pointer-events-auto overflow-y-auto styled-scrollbar pr-1">
+      <div className="desktop-panel absolute right-5 top-20 bottom-24 w-80 flex flex-col gap-3 z-[200] pointer-events-auto overflow-hidden pr-1">
         <SearchBar onLocate={(lat, lng) => setFlyToLocation({ lat, lng, ts: Date.now() })} districts={data.nira_districts} />
 
         {/* District Intel Panel */}
@@ -669,8 +669,10 @@ export default function Dashboard() {
           onLocate={(lat, lng) => setFlyToLocation({ lat, lng, ts: Date.now() })}
         />
 
-        {/* NIRA Live Alerts */}
-        <LiveAlerts data={data} onLocate={(lat, lng) => setFlyToLocation({ lat, lng, ts: Date.now() })} />
+        {/* NIRA Live Alerts — flex-1 so it fills remaining space */}
+        <div className="flex-1 min-h-0 overflow-hidden">
+          <LiveAlerts data={data} onLocate={(lat, lng) => setFlyToLocation({ lat, lng, ts: Date.now() })} />
+        </div>
       </div>
 
       {/* ═══ MOBILE UI ═══ */}

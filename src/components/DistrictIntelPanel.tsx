@@ -99,7 +99,7 @@ export default function DistrictIntelPanel({ district, onClose, onLocate }: Dist
             </div>
           </div>
 
-          <div className="overflow-y-auto styled-scrollbar" style={{ maxHeight: 'calc(100vh - 260px)' }}>
+          <div className="overflow-y-auto styled-scrollbar" style={{ maxHeight: 'calc(100vh - 420px)' }}>
 
             {/* Quick stats */}
             <div className="px-4 py-3 border-b border-gray-50">
